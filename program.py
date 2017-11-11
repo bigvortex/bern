@@ -16,7 +16,7 @@ def main():
     this_game.start_game()
 
     for this_player_index, this_player in enumerate(this_game.game_players): 
-        print("[{}] {}'s hand: {}".format(this_player_index + 1,this_player, this_player.showHand()))
+        print("Player #{} {}'s hand:\n {}".format(this_player_index + 1,this_player, this_player.showHand("\n")))
         
 if __name__ == "__main__":
     main()

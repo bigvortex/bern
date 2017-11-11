@@ -5,10 +5,35 @@ class Card(object):
         self.suit = suit
         self.value = val
         self.IsWild = isWild
-   
+        self.card_name = self.get_card_name_from_value(self.value)
     def __repr__(self):
-        return ("{} of {}".format(self.value, self.suit))
+        return ("{} of {}".format(self.card_name, self.suit))
+    
+    def get_card_color(self):    
+        if self.suit=="Clubs" or self.suit=="Spades":
+            return "Black" 
+        else:
+            return "Red"
 
+    def get_card_name_from_value(self,card_value):
+        if card_value>1 and card_value<11: 
+            return card_value
+        elif card_value==1:
+            return "Ace"
+        elif card_value=="11":
+            return "Jack"
+        elif card_value=="12":
+            return "Queeen"
+        elif card_value=="13":
+            return "King"
+        elif card_value==14:
+            return "Ace"
+
+    def is_left_bern():
+        pass #implement logic 
+
+    def is_right_bern():
+        pass #implement logic 
 
 class Deck(object):
     def __init__(self):
@@ -19,7 +44,6 @@ class Deck(object):
          for s in ["Spades", "Clubs", "Diamonds", "Hearts"]:
              for v in range(9,16):
                 self.cards.append(Card(s, v))
-                 # print("{} of {}".format(v, s))
 
     def show(self):
         for c in self.cards:

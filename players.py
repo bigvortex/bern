@@ -4,12 +4,12 @@ class Player(object):
         self.hand = []
 
     def __repr__(self):
-        return "Player {}".format(self.name)
+        return self.name
 
-    def showHand(self):
-        hand_display="";
+    def showHand(self, delimiter="\n"):
+        hand_display=""
         for this_card in self.hand:
-            hand_display = hand_display + str(this_card) + " "
+            hand_display = "{}\t{}{}".format(hand_display,this_card, delimiter)
         
         return hand_display
     

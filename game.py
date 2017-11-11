@@ -5,9 +5,9 @@ CARDS_PER_HAND = 5
         
 class Game:
     def __init__(self):
-        self.current_Player = None
         self.deck = cards.Deck()
         self.game_players= []
+        self.trick = Trick()
 
     def start_game(self):
         #check number of players
@@ -22,9 +22,22 @@ class Game:
         
     def add_player(self,new_player):
 
-        #First player added becomes current player
+        #First player added becomes current player - todo Move to trick
         if not self.game_players:
-           self.current_Player = new_player
+           self.trick.current_Player = new_player
 
         self.game_players.append(new_player)
 
+    def determine_winning_card(card1,card2,card3,card4):
+        pass
+
+class Trick: 
+    def __init__(self):
+        self.bern_suit = None
+        self.trump_suit = None
+        self.suit_led = None
+        self.dealer = None
+        self.current_player = none
+
+    def is_left_Bern(this_card):
+        if this_card.get_card_color()==
