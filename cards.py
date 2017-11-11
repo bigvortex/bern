@@ -7,14 +7,14 @@ class Card(object):
         self.value = val
         self.IsWild = isWild
    
-
     def show(self):
         print ("{} of {}".format(self.value, self.suit))
 
 class JokerCard(Card):
-    def __init__(self, val):
-       super(self,ValueError,True)
+    def __init__(self):
+       Card.__init__(self,"None", 0,True)
         
+
 class Deck(object):
     def __init__(self):
          self.cards = []
@@ -35,36 +35,18 @@ class Deck(object):
             rand = random.randint(0, i)
             self.cards[i], self.cards[rand] = self.cards[rand],self.cards[i]
 
-    def drawCard(self):
+    def draw_card(self):
         return self.cards.pop()
 
-class Player(object):
-    def __init__(self, name):
-        self.name = name
-        self.hand = []
+    def deal_cards(cards_per_hand):
+        hand = []
+        for i in range(1,cards_per_hand+1):
+            hand.append(draw_card())
 
-    def draw(self, deck):
-        self.hand.append(deck.drawCard())
-        return self
+        return hand
 
-    def showHand(self):
-        for card in self.hand:
-            card.show()
-
-
-if __name__ == "__main__": 
-    card = Card("Clubs", 6, False)
-
-    deck = Deck()
-    deck.shuffle()
-    # deck.show()
-
-    will = Player("Will")
-    will.draw(deck).draw(deck).draw(deck).draw(deck).draw(deck)
-    will.showHand()
-    # card = deck.draw()
-    # card.show()
-
-    # card.show()
-
+class Hand:
+   def __init__(self):
+        cards
+  
 

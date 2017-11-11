@@ -21,7 +21,15 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="bern.py" />
+    <Compile Include="cards.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="players.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="program.py">
       <SubType>Code</SubType>
     </Compile>
