@@ -1,13 +1,20 @@
 import random
 
+
 class Card(object):
-    def __init__(self, suit, val):
+    def __init__(self, suit, val, isWild=False):
         self.suit = suit
         self.value = val
+        self.IsWild = isWild
+   
 
     def show(self):
         print ("{} of {}".format(self.value, self.suit))
 
+class JokerCard(Card):
+    def __init__(self, val):
+       super(self,ValueError,True)
+        
 class Deck(object):
     def __init__(self):
          self.cards = []
@@ -45,19 +52,19 @@ class Player(object):
             card.show()
 
 
+if __name__ == "__main__": 
+    card = Card("Clubs", 6, False)
 
-card = Card("Clubs", 6)
+    deck = Deck()
+    deck.shuffle()
+    # deck.show()
 
-deck = Deck()
-deck.shuffle()
-# deck.show()
+    will = Player("Will")
+    will.draw(deck).draw(deck).draw(deck).draw(deck).draw(deck)
+    will.showHand()
+    # card = deck.draw()
+    # card.show()
 
-will = Player("Will")
-will.draw(deck).draw(deck).draw(deck).draw(deck).draw(deck)
-will.showHand()
-# card = deck.draw()
-# card.show()
-
-# card.show()
+    # card.show()
 
 
