@@ -3,12 +3,13 @@ class Player(object):
         self.name = name
         self.hand = []
 
-    def draw(self, deck):
-        self.hand.append(deck.drawCard())
-        return self
+    def __repr__(self):
+        return "Player {}".format(self.name)
 
     def showHand(self):
-        for card in self.hand:
-            card.show()
-
+        hand_display="";
+        for this_card in self.hand:
+            hand_display = hand_display + str(this_card) + " "
+        
+        return hand_display
     

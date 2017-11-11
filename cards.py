@@ -1,19 +1,14 @@
 import random
 
-
 class Card(object):
     def __init__(self, suit, val, isWild=False):
         self.suit = suit
         self.value = val
         self.IsWild = isWild
    
-    def show(self):
-        print ("{} of {}".format(self.value, self.suit))
+    def __repr__(self):
+        return ("{} of {}".format(self.value, self.suit))
 
-class JokerCard(Card):
-    def __init__(self):
-       Card.__init__(self,"None", 0,True)
-        
 
 class Deck(object):
     def __init__(self):
@@ -48,5 +43,7 @@ class Deck(object):
 class Hand:
    def __init__(self):
         cards
+
+
   
 

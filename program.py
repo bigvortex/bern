@@ -15,11 +15,9 @@ def main():
 
     this_game.start_game()
 
-    #deck = Deck()
-    #deck.shuffle()
-    # deck.show()
-
-
+    for this_player_index, this_player in enumerate(this_game.game_players): 
+        print("[{}] {}'s hand: {}".format(this_player_index + 1,this_player, this_player.showHand()))
+        
 if __name__ == "__main__":
     main()
 
