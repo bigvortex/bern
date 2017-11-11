@@ -38,10 +38,10 @@ class Deck(object):
     def draw_card(self):
         return self.cards.pop()
 
-    def deal_cards(cards_per_hand):
+    def deal_cards(self,cards_per_hand):
         hand = []
         for i in range(1,cards_per_hand+1):
-            hand.append(draw_card())
+            hand.append(self.draw_card())
 
         return hand
 

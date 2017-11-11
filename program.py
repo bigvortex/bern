@@ -13,7 +13,7 @@ def main():
     this_game.add_player(players.Player("Joe Holcomb"))
     this_game.add_player(players.Player("Elvis Presley"))
 
-    this_game.start()
+    this_game.start_game()
 
     #deck = Deck()
     #deck.shuffle()
